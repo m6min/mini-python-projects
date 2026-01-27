@@ -1,7 +1,7 @@
 # 📝 To-do Lists with .txt 
 
 A simple, file-based **To-Do List Application** built with Python. This project demonstrates fundamental CRUD (Create, Read, Update, Delete) operations and persistent data storage using text files.
-*** Note: It's my first Python project. I can make some updates in the future.
+Note: It's my first Python project. I can make some updates in the future.
 ## 🚀 Features
 
 * **Persistent Storage:** Tasks are saved in a `tasks.txt` file, so they remain available after restarting the program.
