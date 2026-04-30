@@ -1,3 +1,5 @@
+import streamlit as st
+
 def encrypt_text(text, shift):
     """ Shifts the given text for given key number in the alphabet """
     result = ""
@@ -16,44 +18,25 @@ def decrypt_text(text, shift):
 
 def crack_message(text):
     """ This function tries all possible keys for the decrypted message"""
-    for key in range(1,27):
+    for key in range(1, 27):
         decrypted_text = decrypt_text(text, key)
-        print(f"For key {key}, message: {decrypted_text}")
+        st.write(f"For key {key}, message: {decrypted_text}")
 
-def main():
-    """ main function for while loop"""
-    print("\n--- ROT-CLI: Rotation Cipher Tool ---")
-    while True:
-        print("\n 1- Encrypt a text |"
-              "2- Decrypt a message | 3- Crack a message (No need key value) | q- Quit")
-        choice = input("Choice: ")
+st.title("ROT-CLI: Rotation Cipher Tool")
 
-        if choice == 'q':
-            print("Exiting...")
-            break
+choice = st.radio("Choice:", ["Encrypt a text", "Decrypt a message", "Crack a message (No need key value)"])
 
-        if choice not in ['1', '2', '3']:
-            print("Invalid choice!")
-            continue
+text = st.text_input("Enter message:")
+shift = 1
+if choice != "Crack a message (No need key value)":
+    shift = st.number_input("Enter the key (Shift number):", min_value=1, max_value=25, step=1)
 
-        text = input("Enter message: ")
-        if choice == '3':
-            crack_message(text)
-            continue
-        else:
-            try:
-                shift = int(input("Enter the key (Shift number): "))
-            except ValueError:
-                print("It must be a number!")
-                continue
-
-            if choice == '1':
-                encrypted = encrypt_text(text, shift)
-                print(f"\nEncrypted: {encrypted}")
-
-            elif choice == '2':
-                decrypted = decrypt_text(text, shift)
-                print(f"\nDecrypted: {decrypted}")
-
-if __name__ == "__main__":
-    main()
+if st.button("Run"):
+    if choice == "Crack a message (No need key value)":
+        crack_message(text)
+    elif choice == "Encrypt a text":
+        encrypted = encrypt_text(text, shift)
+        st.write(f"Encrypted: {encrypted}")
+    elif choice == "Decrypt a message":
+        decrypted = decrypt_text(text, shift)
+        st.write(f"Decrypted: {decrypted}")
