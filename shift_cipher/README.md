@@ -2,9 +2,9 @@
 
 A Python-based Command Line Interface (CLI) tool for encrypting and decrypting text using the **Caesar Cipher** (Rotation Cipher) algorithm. It also includes a **Brute Force Cracker** feature to decode messages without a key.
 
-See the live site [here](https://shiftcipher.streamlit.app/)
+[Click here](https://shiftcipher.streamlit.app/) to see live site on Streamlit
 
-## 🚀 Features
+## Features
 
 * **Encryption:** Shifts characters by a specified key using ASCII manipulation.
 * **Decryption:** Reverses the shift to reveal the original message.
@@ -29,7 +29,7 @@ See the live site [here](https://shiftcipher.streamlit.app/)
     python main.py
     ```
 
-## Usage Example
+## Usage Example (For Terminal)
 
 ```text
 --- ROT-CLI: Rotation Cipher Tool ---
