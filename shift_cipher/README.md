@@ -1,4 +1,4 @@
-# 🔐 ROT-CLI: Rotation Cipher Tool
+# ROT-CLI: Rotation Cipher Tool
 
 A Python-based Command Line Interface (CLI) tool for encrypting and decrypting text using the **Caesar Cipher** (Rotation Cipher) algorithm. It also includes a **Brute Force Cracker** feature to decode messages without a key.
 
@@ -39,4 +39,4 @@ Choice: 1
 Enter message: Hello World
 Enter the key (Shift number): 1
 
-🔒 Encrypted: Ifmmp Xpsme
+Encrypted: Ifmmp Xpsme
